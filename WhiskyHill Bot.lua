@@ -26,7 +26,7 @@ function automaticUpdates ()
       toast ("You are up to date!")
     else
       httpDownload("https://raw.githubusercontent.com/Hiller131/WhiskyHill-Bot/master/version.lua", localPath .."version.lua")
-      httpDownload("hhttps://raw.githubusercontent.com/Hiller131/WhiskyHill-Bot/master/WhiskyHill%20Bot.lua", localPath .."WhiskyHill Bot.lua")
+      httpDownload("https://raw.githubusercontent.com/Hiller131/WhiskyHill-Bot/master/WhiskyHill%20Bot.lua", localPath .."WhiskyHill Bot.lua")
       httpDownload("https://raw.githubusercontent.com/Hiller131/WhiskyHill-Bot/master/imageupdater.lua", localPath .."imageupdater.lua")
       scriptExit("You have Updated Palbot!")
     end
