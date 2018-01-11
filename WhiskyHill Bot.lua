@@ -2051,6 +2051,7 @@ function sellGetRune ()
     findRuneSlot()
     findMainStat()
     subEval()
+	keyevent(120)
     runeKeep1()
   end
 end
