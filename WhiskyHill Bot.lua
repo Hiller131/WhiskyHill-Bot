@@ -1519,7 +1519,7 @@ function victory()
   victoryDiamondRegion:existsClick(Pattern("victoryDiamond.png"):similar(imgAccuracy), 3)
   victoryDiamondRegion:existsClick(Pattern("victoryDiamond.png"):similar(imgAccuracy), 1)
   victoryDiamondRegion:existsClick(Pattern("victoryDiamond.png"):similar(imgAccuracy), 2)
-  if not okRegion:existsClick(Pattern("ok.png"):similar(imgAccuracy), 3) then
+  if not okRegion:existsClick(Pattern("ok.png"):similar(imgAccuracy), 5) then
     sellGetRune()
   end
 end
