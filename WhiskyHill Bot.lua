@@ -324,6 +324,7 @@ slot3MaxRegion = Region(1215,668,345,165)
 slot4MaxRegion = Region(435,797,345,165)
 end
 function captureScreenshot()
+Settings:snapSet(OutputCaptureImg, true)
   screen = getRealScreenSize()
   setImagePath(localPath .. "Runes/")
   wait(1)
@@ -1849,7 +1850,7 @@ function findRuneRank()
 end
 function findRuneSlot()
   runeSlotRegion:highlight()
-  if(runeSlotRegion:exists(Pattern("slotOne.png"):similar(.9), .5)) then
+  if(runeSlotRegion:exists(Pattern("slotOne.png"):similar(.9), 3)) then
     runeSlot = 1
     slotString = "1"
   elseif(runeSlotRegion:exists(Pattern("slotTwo.png"):similar(.9), .5)) then
