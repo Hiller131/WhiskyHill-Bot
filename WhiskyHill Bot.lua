@@ -324,7 +324,7 @@ slot3MaxRegion = Region(1215,668,345,165)
 slot4MaxRegion = Region(435,797,345,165)
 end
 function captureScreenshot()
-Settings:snapSet(OutputCaptureImg, true)
+
   screen = getRealScreenSize()
   setImagePath(localPath .. "Runes/")
   wait(1)
@@ -335,6 +335,8 @@ Settings:snapSet(OutputCaptureImg, true)
   else
 	setImagePath(localPath .. "1920x1080")
   end
+  Settings:snapSet(OutputCaptureImg, true)
+  takeSnapshot()
   keyevent(120)
 end
 function zoomTest()
@@ -2052,7 +2054,6 @@ function sellGetRune ()
     findRuneSlot()
     findMainStat()
     subEval()
-	keyevent(120)
     runeKeep1()
   end
 end
