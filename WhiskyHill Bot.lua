@@ -1087,9 +1087,9 @@ function setDialogOptions()
   end
 end
 function setAdvancedOptions()
-  --local screen = getAppUsableScreenSize()
- -- screenW = screen:getX()
-  --screenH = screen:getY()
+  local screen = getAppUsableScreenSize()
+  screenW = screen:getX()
+  screenH = screen:getY()
   if screenRes == spinnerResolution[1] then
     toast("AutoDetect:  " .. screenW .. "x" .. screenH .. "")
     if screenW == 2560 then
@@ -1444,7 +1444,7 @@ function setAdvancedOptions()
   connectionTimeout = connectionTimeout * 4
 end
 function setDimension16by9()
-  local screen = getAppUsableScreenSize()
+  local screen = getRealScreenSize()
   screenW = screen:getX()
   screenH = screen:getY()
   compareW = 1920
@@ -1453,7 +1453,7 @@ function setDimension16by9()
   Settings:setCompareDimension(true, compareW)
 end
 function setDimension16by10()
-  local screen = getAppUsableScreenSize()
+  local screen = getRealScreenSize()
   screenW = screen:getX()
   screenH = screen:getY()
   compareW = 1920
@@ -1852,7 +1852,7 @@ function findRuneRank()
 end
 function findRuneSlot()
   runeSlotRegion:highlight()
-  if(runeSlotRegion:exists(Pattern("slotOne.png"):similar(.9), 3)) then
+  if(runeSlotRegion:exists(Pattern("slotOne.png"):similar(.9), .5)) then
     runeSlot = 1
     slotString = "1"
   elseif(runeSlotRegion:exists(Pattern("slotTwo.png"):similar(.9), .5)) then
