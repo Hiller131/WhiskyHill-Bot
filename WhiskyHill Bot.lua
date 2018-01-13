@@ -330,14 +330,14 @@ function captureScreenshot()
   wait(1)
   rgn = Region(0, 0, screen:getX(), screen:getY())
   rgn:save(tostring("Rune" .. getNetworkTime() .. ".png"))
-  if compareH == 1440 then
-	setImagePath(localPath .. "2560x1440")
-  else
+  --if compareH == 1440 then
+	--setImagePath(localPath .. "2560x1440")
+  --else
 	setImagePath(localPath .. "1920x1080")
-  end
-  Settings:snapSet(OutputCaptureImg, true)
-  takeSnapshot()
-  keyevent(120)
+  --end
+  --Settings:snapSet(OutputCaptureImg, true)
+  --takeSnapshot()
+  --keyevent(120)
 end
 function zoomTest()
   wait(1)
@@ -1087,14 +1087,14 @@ function setDialogOptions()
   end
 end
 function setAdvancedOptions()
-  local screen = getAppUsableScreenSize()
-  screenW = screen:getX()
-  screenH = screen:getY()
+  --local screen = getAppUsableScreenSize()
+ -- screenW = screen:getX()
+  --screenH = screen:getY()
   if screenRes == spinnerResolution[1] then
     toast("AutoDetect:  " .. screenW .. "x" .. screenH .. "")
     if screenW == 2560 then
       if screenH == 1440 then
-        setImagePath(localPath .. "2560x1440")
+        setImagePath(localPath .. "1920x1080")
         Settings:setScriptDimension(true, 1920)
         Settings:setCompareDimension(true, 1920)
         --compareW = 2560
@@ -1284,7 +1284,7 @@ function setAdvancedOptions()
       scriptExit ("This bot is no longer compatible with your version")
     end
   elseif screenRes == "2560x1440 (16:9)" then
-    setImagePath(localPath .. "2560x1440")
+    setImagePath(localPath .. "1920x1080")
     Settings:setScriptDimension(true, 1920)
     Settings:setCompareDimension(true, 1920)
     compareW = 2560
@@ -1462,11 +1462,11 @@ function setDimension16by10()
   Settings:setCompareDimension(true, compareW)
 end
 function start()
-screen = getRealScreenSize()
-toast(screen:getX()) -- the width of device screen size
-toast(screen:getY()) -- the height of device screen size
+--screen = getRealScreenSize()
+--toast(screen:getX()) -- the width of device screen size
+--toast(screen:getY()) -- the height of device screen size
   if startRegion:exists(Pattern("start.png"):similar(imgAccuracy), 2) then
-    takeSnapshot()
+    --takeSnapshot()
     if not startDialogRegion:exists(Pattern("startArenaBattle.png"), 0.1) and not startDialogRegion:exists(Pattern("startGiant.png"), 0.1) and not startDialogRegion:exists(Pattern("startDragon.png"), 0.1) and not startDialogRegion:exists(Pattern("startNecro.png"), 0.1) and not startDialogRegion:exists(Pattern("startSD.png"), 0.1) and not startDialogRegion:exists(Pattern("startHall.png"), 0.1) and not startDialogRegion:exists(Pattern("startRaid.png"), 0.1) and not startDialogRegion:exists(Pattern("startRift.png"), 0.1) and not startDialogRegion:exists(Pattern("startToa.png"), 0.1) then
       checkMaxLevel()
       autoSwitchFodder()
